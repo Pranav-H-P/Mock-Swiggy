@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartItemType } from '../cart-item-type';
+import { CartItemType } from '../item-types';
 import { Router } from '@angular/router';
 
 @Component({
