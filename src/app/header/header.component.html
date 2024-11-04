@@ -1,0 +1,129 @@
+<header class="px-40 laptop:px-5 shadow-md flex justify-between items-center gap-4">
+
+    
+    <img (click)="goToHome()" src="../../assets/images/angularLogo.png" alt="logo" class="tablet:hidden max-w-12 h-auto hover:scale-110 transition-all">
+    
+    @if (this.router.url === "/cart") { <!--header has different elements based on if its in checkout/ payment page or not-->
+        
+
+
+
+        <p class="font-bold mr-auto">Secure Checkout</p>
+     
+        <div class="flex items-center gap-2 group py-6">
+            <img src="../../assets/images/help.png" alt="help" class="h-auto max-w-6 group-hover:text-orange-500">
+            <p class="text-swiggyText group-hover:text-orange-500">Help</p>
+        </div>
+    
+        <div class="flex items-center gap-2 relative group h-auto py-6">
+            <img src="../../assets/images/user.png" alt="user" class="h-auto max-w-6 group-hover:text-orange-500">
+            <p class="text-swiggyText group-hover:text-orange-500">{{userName}}</p>
+    
+            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            border-t-orange-500 flex-col min-w-60 min-h-64 rounded-sm justify-between p-10">
+    
+                <p class="text-swiggyText hover:font-bold">Profile</p>
+                <p class="text-swiggyText hover:font-bold">Orders</p>
+                <p class="text-swiggyText hover:font-bold">Swiggy One</p>
+                <p class="text-swiggyText hover:font-bold">Favorites</p>
+                <p class="text-swiggyText hover:font-bold">Log Out</p>
+    
+            </div>
+    
+        </div>
+
+
+
+    }@else {
+
+
+
+        <div class="flex items-center gap-2 group py-6 extraSmall:hidden">
+            <p class="text-sm font-bold text-black underline underline-offset-8 group-hover:text-orange-500">Home</p> 
+            <p class="text-swiggyTextLight text-xs largeTablet:max-w-[8vw] truncate group-hover:opacity-60">123 street, xyz Nagar, Chennai, Tamil Nadu</p>
+        </div>
+    
+        <div class="flex items-center gap-2 group py-6 tablet:hidden">
+            <img src="../../assets/images/suitcase.png" alt="corp" class="h-auto max-w-6 group-hover:text-orange-500" >
+            <p class="text-swiggyText whitespace-nowrap group-hover:text-orange-500">Swiggy Corporate</p>
+        </div>
+    
+        <div (click)="goToSearch()" class="flex items-center gap-2 group py-6" id="searchDiv">
+            <img src="../../assets/images/search.png" alt="search" class="h-auto max-w-6 group-hover:text-orange-500">
+            <p class="text-swiggyText group-hover:text-orange-500 extraSmall:hidden">Search</p>
+        </div>
+    
+        <div class="flex items-center gap-2 group py-6 tablet:hidden">
+            <img src="../../assets/images/offer.png" alt="offers" class="h-auto max-w-6 group-hover:text-orange-500">
+            <p class="text-swiggyText group-hover:text-orange-500">Offers</p>
+        </div>
+    
+        <div class="flex items-center gap-2 group py-6 tablet:hidden">
+            <img src="../../assets/images/help.png" alt="help" class="h-auto max-w-6 group-hover:text-orange-500">
+            <p class="text-swiggyText group-hover:text-orange-500">Help</p>
+        </div>
+    
+        <div class="flex items-center gap-2 relative group h-auto py-6 ">
+            <img src="../../assets/images/user.png" alt="user" class="h-auto max-w-6 group-hover:text-orange-500">
+            <p class="text-swiggyText group-hover:text-orange-500">{{userName}}</p>
+    
+            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            border-t-orange-500 flex-col min-w-60 min-h-64 rounded-sm justify-between p-10">
+    
+                <p class="text-swiggyText hover:font-bold">Profile</p>
+                <p class="text-swiggyText hover:font-bold">Orders</p>
+                <p class="text-swiggyText hover:font-bold">Swiggy One</p>
+                <p (click)="goToFavorites()" class="text-swiggyText hover:font-bold">Favorites</p>
+                <p class="text-swiggyText hover:font-bold">Log Out</p>
+    
+            </div>
+    
+        </div>
+    
+        <div (click)="goToCart()" class="flex items-center gap-2 relative group py-6">
+            <img src="../../assets/images/cart.png" alt="cart" class="h-auto max-w-8 group-hover:text-orange-500">
+            <p class="absolute text-sm left-3 group-hover:text-orange-500">{{cartItems.length}}</p>
+            <p class="text-swiggyText group-hover:text-orange-500">Cart</p>
+    
+            <div class="absolute top-16 -left-32 laptop:-left-64 extraSmall:min-w-32 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            border-t-orange-500 flex-col min-w-80 min-h-64 rounded-sm justify-between p-10">
+    
+                
+                @if (cartItems.length != 0) {
+                    <div class="flex flex-col basis-2/3 my-4">
+                        @for (item of cartItems; track $index) {
+                            <div class="flex justify-between">
+                                <p class="text-swiggyText">{{item.name}} x {{item.quantity}}</p>
+                                <p class="text-swiggyTextLight">₹{{item.price*item.quantity}}</p>
+                            </div>
+            
+                        }
+                    </div>
+    
+                    <div class="flex flex-col basis-1/3">
+                        <hr class="border-dashed border-swiggyText border-1">
+                        
+                        <div class="flex justify-between my-5">
+                            <div class="flex flex-col">
+                                <p class="font-bold text-black">Sub Total</p>
+                                <p class="text-swiggyTextLight">Extra charges may apply</p>
+                            </div>
+                            <p class="font-bold">₹{{totalCost}}</p>
+                                
+                        </div>
+                        
+                        <button (click)="goToCart()" class="p-2 rounded-md bg-orange-500">Checkout</button>
+                    </div>
+                }@else {
+                    <p class="text-swiggyTextLight text-4xl whitespace-nowrap">Cart empty</p>  
+                    <p class="text-swiggyTextLight">Good food is always cooking! Go ahead, order some yummy items from the menu.</p>
+                }
+    
+            </div>
+    
+        </div>
+
+    }
+    
+
+</header>
