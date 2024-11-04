@@ -1,1 +1,40 @@
-<p>footer works!</p>
+<footer class="flex py-20 px-52 bg-gray-200 items-start justify-center laptop:px-20 tablet:flex-col tablet:items-center tablet:gap-10">
+
+    <div class="basis-1/4">
+        <div class="flex items-center gap-4">
+            <img src="../../assets/images/angularLogo.png" alt="logo" class="max-w-12 h-auto">
+            <p class="text-orange-600 font-bold text-3xl">Swigular</p>
+        </div>
+        <p class="text-swiggyText text-sm">© 2024 Swigular Limited</p>
+    </div>
+
+    <div class="basis-3/4 flex gap-10 flex-wrap">
+
+        @for (title of footerLinkTitles; track i; let i = $index) {
+
+            <div class="flex flex-col gap-3">
+
+                <p class="font-bold">{{footerLinkTitles[i]}}</p>
+
+                @for (item of footerLinks[i]; track j; let j = $index) {
+                    <p class="text-swiggyTextLight">{{footerLinks[i][j]}}</p>
+                }
+
+            </div>
+        }
+        <div class="flex flex-col gap-3">
+            <p class="font-bold">Social Links</p>
+            <div class="flex gap-3">
+                <img src="../../assets/images/linkedin.png" class="h-auto max-w-6">
+                <img src="../../assets/images/instagram.png" class="h-auto max-w-6">
+                <img src="../../assets/images/facebook.png" class="h-auto max-w-6">
+                <img src="../../assets/images/pintrest.png" class="h-auto max-w-6">
+                <img src="../../assets/images/twitter.png" class="h-auto max-w-6">
+            </div>
+
+            
+
+        </div>
+
+    </div>
+</footer>
