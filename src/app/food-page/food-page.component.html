@@ -4,7 +4,7 @@
     <p class="text-3xl font-bold my-5">{{foodData?.shops?.length}} Restaurants to explore</p>
 </section>
 
-<section class="pl-40 pr-20 pb-10 flex flex-wrap tablet:px-5">
+<section class="pl-40 pr-20 pb-10 flex gap-4 flex-wrap tablet:px-5">
 
     @for (item of restaurantList; track $index) {
         <app-restaurant-card (restClicked)="onRestCardClicked($event)" [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>

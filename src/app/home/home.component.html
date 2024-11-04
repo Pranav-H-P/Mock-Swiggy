@@ -15,4 +15,19 @@
 
 </section>
 
+<section class="flex flex-col px-44 my-5 mobile:px-5 laptop:px-20 overflow-scroll ">
+
+
+    <p class="font-bold text-2xl">Top restaurants in your area</p>
+</section>
+
+<section class="pl-40 pr-20 pb-10 flex gap-4 flex-wrap tablet:px-5">
+    
+    @for (item of restaurantData; track $index) {
+        
+        <app-restaurant-card (restClicked)="onRestaurantCardClicked($event)" [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
+    }
+
+
+</section>
 
