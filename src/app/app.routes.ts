@@ -5,6 +5,7 @@ import { FoodPageComponent } from './food-page/food-page.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,10 @@ export const routes: Routes = [
     {
         path : "foodPage",
         component : FoodPageComponent
+    },
+    {
+        path: "restaurantPage",
+        component : RestaurantPageComponent
     },
     {
         path : "payment",

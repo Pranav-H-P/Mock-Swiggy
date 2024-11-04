@@ -1,1 +1,13 @@
-<p>food-page works!</p>
+<section class="pl-40 pr-20 pt-20 flex flex-col gap-5 tablet:px-5">
+    <p class="text-4xl font-bold">{{foodData?.name}}</p>
+    <p class="text-swiggyText">Dive into these delicious & flavoursome {{foodData?.name}} for a perfect meal.</p>
+    <p class="text-3xl font-bold my-5">{{foodData?.shops?.length}} Restaurants to explore</p>
+</section>
+
+<section class="pl-40 pr-20 pb-10 flex flex-wrap tablet:px-5">
+
+    @for (item of restaurantList; track $index) {
+        <app-restaurant-card (restClicked)="onRestCardClicked($event)" [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
+    }
+
+</section>

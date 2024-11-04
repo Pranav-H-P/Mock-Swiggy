@@ -1,21 +1,37 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuServiceService } from '../services/menu-service.service';
+import { RestaurantServiceService } from '../services/restaurant-service.service';
+import { FoodItemType, RestaurantType } from '../item-types';
+import { FoodItemCardComponent } from "../reuseable/food-item-card/food-item-card.component";
+import { DataServiceService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [FoodItemCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
   userName: string = "Pranav";
+  foodData: FoodItemType[];
+  restaurantData: RestaurantType[];
 
-  goToFoodItem(itemName: string){
+  constructor(private dataService: DataServiceService,private menuService: MenuServiceService, 
+    private restaurantService: RestaurantServiceService, private router: Router){
+      this.foodData = menuService.getMenu();
+      this.restaurantData = restaurantService.getAllRestaurantData();
+    }
 
+  
+    onFoodCardClicked(foodName: string){
+      this.dataService.setCurrFood(foodName);
+      this.router.navigate(['foodPage']);
+    }
+    onRestaurantCardClicked(foodName: string){
 
-
-  }
+    }
 
 }

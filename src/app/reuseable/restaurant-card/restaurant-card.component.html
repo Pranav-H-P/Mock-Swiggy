@@ -1,1 +1,6 @@
-<p>restaurant-card works!</p>
+<div class="flex flex-col p-2 gap-2 transition-all hover:scale-90" (click)="onCardClicked()">
+    <img src="../{{restImg}}" class="h-48 w-72 rounded-2xl object-cover">
+    <p class="text-xl font-bold">{{restName}}</p>
+    <p class="text-swiggyTextLight text-sm truncate pr-10">{{restItems}}</p>
+
+</div>

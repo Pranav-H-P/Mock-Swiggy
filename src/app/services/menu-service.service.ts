@@ -35,15 +35,6 @@ export class MenuServiceService {
       price: 150
     },
     {
-      name: "Samosa",
-      img: "../../assets/images/food/samosa.avif",
-      shops: [
-        "Fast Food 1",
-        "Fast Food 2"
-      ],
-      price: 50
-    },
-    {
       name: "Shawarma",
       img: "../../assets/images/food/shawarma.avif",
       shops: [
@@ -121,4 +112,7 @@ export class MenuServiceService {
     return undefined;
   }
 
+  getMatchingItems(){ // for search
+
+  }
 }

@@ -10,7 +10,7 @@ export class RestaurantServiceService {
   restaurantList:RestaurantType[] = [
     {
       restaurantName: "Indian Restaurant 1",
-      img: "../../assets/images/restaurants/ir1.png",
+      img: "../../assets/images/restaurants/ir1.avif",
       foodList: [
         "Biryani", "Samosa", "Parotta", "Roll", "Shawarma"
       ],
@@ -31,7 +31,7 @@ export class RestaurantServiceService {
     },
     {
       restaurantName: "Indian Restaurant 2",
-      img: "../../assets/images/restaurants/ir2.png",
+      img: "../../assets/images/restaurants/ir2.avif",
       foodList: [
         "Biryani", "Parotta", "Roll"
       ],
@@ -64,7 +64,7 @@ export class RestaurantServiceService {
     },
     {
       restaurantName: "Chineese Restaurant 1",
-      img: "../../assets/images/restaurants/cr1.png",
+      img: "../../assets/images/restaurants/cr1.avif",
       foodList: [
         "Noodles", "Roll"
       ],
@@ -89,7 +89,7 @@ export class RestaurantServiceService {
     },
     {
       restaurantName: "Chineese Restaurant 2",
-      img: "../../assets/images/restaurants/cr2.png",
+      img: "../../assets/images/restaurants/cr2.avif",
       foodList: [
         "Noodles", "Roll", "Momos"
       ],
@@ -114,9 +114,9 @@ export class RestaurantServiceService {
     },
     {
       restaurantName: "Fast Food 1",
-      img: "../../assets/images/restaurants/ff2.png",
+      img: "../../assets/images/restaurants/ff1.avif",
       foodList: [
-        "Pizza", "Burger", "Samosa", "Shawarma", "Roll"
+        "Pizza", "Burger", "Shawarma", "Roll"
       ],
       reviews: [
         {
@@ -155,9 +155,9 @@ export class RestaurantServiceService {
     },
     {
       restaurantName: "Fast Food 2",
-      img: "../../assets/images/restaurants/ff2.png",
+      img: "../../assets/images/restaurants/ff2.avif",
       foodList: [
-        "Pizza", "Burger", "Samosa", "Roll"
+        "Pizza", "Burger", "Roll"
       ],
       reviews: [
         {

@@ -1,11 +1,16 @@
 
-<section class="px-44 my-5">
+<section class="px-44 my-5 laptop:px-20">
 
 
     <p class="font-bold text-2xl">{{userName}}, What's on your mind?</p>
 
-    <div class="flex p-5 gap-5">
+    <div class="flex p-5 gap-5 overflow-scroll tablet:flex-wrap tablet:p-0">
         
+        @for (item of foodData; track i; let i = $index) {
+
+            <app-food-item-card (foodClicked)="onFoodCardClicked($event)" [foodImg]="foodData[i].img" [foodName]="foodData[i].name" ></app-food-item-card>
+        }
+
     </div>
 
 </section>
