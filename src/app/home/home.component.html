@@ -8,7 +8,7 @@
         
         @for (item of foodData; track i; let i = $index) {
 
-            <app-food-item-card (foodClicked)="onFoodCardClicked($event)" [foodImg]="foodData[i].img" [foodName]="foodData[i].name" ></app-food-item-card>
+            <app-food-item-card [foodImg]="foodData[i].img" [foodName]="foodData[i].name" ></app-food-item-card>
         }
 
     </div>
@@ -25,7 +25,7 @@
     
     @for (item of restaurantData; track $index) {
         
-        <app-restaurant-card (restClicked)="onRestaurantCardClicked($event)" [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
+        <app-restaurant-card  [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
     }
 
 

@@ -1,1 +1,25 @@
-<p>restaurant-page works!</p>
+<section class="py-10 gap-3 px-44 largeTablet:px-20 tablet:px-10 mobile:px-0 flex flex-col mobile:items-center">
+
+    <div class="flex gap-3">
+        <p class="text-3xl font-bold">{{restName}}</p>
+        @if (favorite) {
+            <img (click)="toggleFavorite()" src="../../assets/images/heartRed.png" alt="user" class="h-auto max-w-10">
+        }@else {
+            <img (click)="toggleFavorite()" src="../../assets/images/heartBlack.png" alt="user" class="h-auto max-w-10">
+        }
+    </div>
+        
+
+    <p class="my-10 text-2xl font-bold">Menu</p>
+        
+    @for (item of foodData; track $index) {
+        <app-menu-item [foodName]="item.name" [img]="item.img" [price]="item.price"></app-menu-item>
+    }
+
+    <p class="my-10 text-2xl font-bold">Reviews</p>
+
+    @for (item of restData?.reviews; track $index) {
+        <app-user-review [userName]="item.userName" [review]="item.review"></app-user-review>
+    }
+        
+</section>

@@ -40,9 +40,5 @@ export class FoodPageComponent {
       
   }
 
-  onRestCardClicked(restName: string){
-    this.dataService.setCurrRestaurant(restName);
-    this.router.navigate(['restaurantPage']);
-  }
 
 }

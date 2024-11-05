@@ -26,14 +26,4 @@ export class HomeComponent {
       this.restaurantData = restaurantService.getAllRestaurantData();
     }
 
-  
-    onFoodCardClicked(foodName: string){
-      this.dataService.setCurrFood(foodName);
-      this.router.navigate(['foodPage']);
-    }
-    onRestaurantCardClicked(restName: string){
-      this.dataService.setCurrFood(restName);
-      this.router.navigate(['restaurantPage']);
-    }
-
 }

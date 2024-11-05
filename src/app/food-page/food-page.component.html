@@ -7,7 +7,7 @@
 <section class="pl-40 pr-20 pb-10 flex gap-4 flex-wrap tablet:px-5">
 
     @for (item of restaurantList; track $index) {
-        <app-restaurant-card (restClicked)="onRestCardClicked($event)" [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
+        <app-restaurant-card [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
     }
 
 </section>

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../../services/data-service.service';
 
 @Component({
   selector: 'app-restaurant-card',
@@ -13,10 +15,14 @@ export class RestaurantCardComponent {
   @Input() restImg: string = ""
   @Input() restItems: string = ""
 
-  @Output() restClicked = new EventEmitter<string>();
+  constructor(private router: Router, private dataService: DataServiceService){
+
+  }
 
   onCardClicked(){
-    this.restClicked.emit(this.restName);
+    this.dataService.setCurrRestaurant(this.restName);
+    this.router.navigate(["restaurantPage"]);
+
   }
 
 }

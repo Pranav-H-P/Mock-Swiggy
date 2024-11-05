@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../../services/data-service.service';
 
 @Component({
   selector: 'app-food-item-card',
@@ -11,11 +13,13 @@ export class FoodItemCardComponent {
 
   @Input() foodName:string = "";
   @Input() foodImg:string = "";
-  @Output() foodClicked = new EventEmitter<string>();
+  
+  constructor(private router: Router, private dataService: DataServiceService){}
 
   onClicked(){
-
-    this.foodClicked.emit(this.foodName);
+    this.dataService.setCurrFood(this.foodName);
+    this.router.navigate(['foodPage']);
+    
   }
 
 }

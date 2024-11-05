@@ -8,7 +8,19 @@ export class DataServiceService {
   currFood = signal("Biryani");
   currRestaurant = signal("Indian Restaurant 1");
 
-  constructor() { }
+  favoriteList = signal<string[]>([]);
+
+  constructor() {
+    let tempArr:string[] = [];
+
+    const storedArrayString = localStorage.getItem('favorites');
+
+    if (storedArrayString) {
+        
+        tempArr = JSON.parse(storedArrayString);
+    }
+    this.favoriteList.update(values => {return tempArr});
+   }
 
   setCurrFood(name: string){
     this.currFood.update(() => name);
@@ -23,5 +35,23 @@ export class DataServiceService {
     return this.currRestaurant();
   }
 
+  addToFavorite(restName: string){
+    
+    this.favoriteList.update(values => {return [...values, restName]});
+    const stringArr = JSON.stringify(this.favoriteList());
+    localStorage.setItem('favorites', stringArr);
+    console.log(this.favoriteList());
+
+  }
+  removeFromFavorite(restName: string){
+
+    const tempArr = this.favoriteList().filter(item => item !== restName);
+
+    this.favoriteList.update(values => {return tempArr});
+
+    const stringArr = JSON.stringify(this.favoriteList());
+    localStorage.setItem('favorites', stringArr);
+    console.log(this.favoriteList());
+  }
 
 }
