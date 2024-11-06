@@ -18,7 +18,13 @@
                 <button (click)="onNegClicked()" class=" bg-white font-bold p-3 border-gray-500 border-y-[1px] rounded-r-lg border-r-[1px]">-</button>
 
             </div>
-            <button (click)="onAddClicked()" class=" text-green-400 py-2 px-6 rounded-md bottom-0 bg-white border-gray-400 border-[1px]">Add</button>
+        
+            @if (count > 0) {
+                <button (click)="onAddClicked()" class=" text-green-400 py-2 px-6 rounded-md bottom-0 bg-white border-gray-400 border-[1px] active:bg-green-400 active:border-green-400">Add</button>
+            }@else {
+                <button (click)="onAddClicked()" class=" text-green-400 py-2 px-6 rounded-md bottom-0 bg-white border-gray-400 border-[1px] active:bg-red-500 active:border-red-500">Add</button>
+            }
+
         </div>
             
     </div>

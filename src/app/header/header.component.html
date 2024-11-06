@@ -93,16 +93,16 @@
     
         <div (click)="goToCart()" class="flex items-center gap-2 relative group py-6">
             <img src="../../assets/images/cart.png" alt="cart" class="h-auto max-w-8 group-hover:text-orange-500">
-            <p class="absolute text-sm left-3 group-hover:text-orange-500">{{cartItems.length}}</p>
+            <p class="absolute text-sm left-3 group-hover:text-orange-500">{{cartService.cart().length}}</p>
             <p class="text-swiggyText group-hover:text-orange-500">Cart</p>
     
             <div class="absolute top-16 -left-32 laptop:-left-64 extraSmall:min-w-32 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-80 min-h-64 rounded-sm justify-between p-10">
     
                 
-                @if (cartItems.length != 0) {
+                @if (cartService.cart().length != 0) {
                     <div class="flex flex-col basis-2/3 my-4">
-                        @for (item of cartItems; track $index) {
+                        @for (item of cartService.cart(); track $index) {
                             <div class="flex justify-between">
                                 <p class="text-swiggyText">{{item.name}} x {{item.quantity}}</p>
                                 <p class="text-swiggyTextLight">₹{{item.price*item.quantity}}</p>
@@ -119,7 +119,7 @@
                                 <p class="font-bold text-black">Sub Total</p>
                                 <p class="text-swiggyTextLight">Extra charges may apply</p>
                             </div>
-                            <p class="font-bold">₹{{totalCost}}</p>
+                            <p class="font-bold">₹{{cartService.getTotal()}}</p>
                                 
                         </div>
                         

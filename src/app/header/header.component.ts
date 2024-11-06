@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartItemType } from '../item-types';
 import { Router } from '@angular/router';
+import { CartServiceService } from '../services/cart-service.service';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +13,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
   userName: string = "Pranav";
-  cartItems: CartItemType[] = [
+
+  constructor(protected router: Router, protected cartService: CartServiceService){
     
-  ]; // contains name, quantity and price
-
-  totalCost: number = 0;
-
-  constructor(protected router: Router){}
+  }
 
   goToFavorites(){
     this.router.navigate(["favorites"]);

@@ -21,13 +21,16 @@ export class MenuItemComponent {
 
 
   onAddClicked(){
-    let cartItem = {
-      name: this.foodName,
-      quantity: this.count,
-      price: this.price
+
+    if (this.count > 0){
+      console.log("adding");
+      let cartItem = {
+        name: this.foodName,
+        quantity: this.count,
+        price: this.price
+      }
+      this.cartService.addToCart(cartItem);
     }
-    this.cartService.addToCart(cartItem);
-    console.log(this.cartService.cart());
   }
 
   onPlusClicked(){

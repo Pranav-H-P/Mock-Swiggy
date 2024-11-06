@@ -14,6 +14,17 @@ export class CartServiceService {
     this.cart.update(values => {return [...values, cartItem]});
   }
 
+  getTotal(){
+    let sum = 0;
+
+    for (let i = 0; i < this.cart().length; i++){
+      
+      sum += this.cart()[i].price;
+
+    }
+    return sum;
+  }
+
   removeFromCart(id: number){
 
   }
