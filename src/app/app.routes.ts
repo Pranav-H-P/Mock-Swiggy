@@ -6,34 +6,44 @@ import { PaymentSuccessComponent } from './payment-success/payment-success.compo
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PaymentFailureComponent } from './payment-failure/payment-failure.component';
 
 export const routes: Routes = [
     {
-        path : "",
-        component : HomeComponent
+        path: "",
+        component: HomeComponent
     },
     {
-        path : "favorites",
-        component : FavoritesComponent
+        path: "favorites",
+        component: FavoritesComponent
     },
     {
-        path : "foodPage",
-        component : FoodPageComponent
+        path: "foodPage",
+        component: FoodPageComponent
     },
     {
         path: "restaurantPage",
-        component : RestaurantPageComponent
+        component: RestaurantPageComponent
     },
     {
-        path : "payment",
-        component : PaymentSuccessComponent
+        path: "payment",
+        component: PaymentSuccessComponent
     },
     {
-        path : "cart",
-        component : CartPageComponent
+        path: "cart",
+        component: CartPageComponent
     },
     {
-        path : "search",
-        component : SearchPageComponent
+        path: "search",
+        component: SearchPageComponent
+    },
+    {
+        path: "paymentFailed",
+        component: PaymentFailureComponent
+    },
+    {
+        path: "**",
+        component: PageNotFoundComponent
     }
 ];

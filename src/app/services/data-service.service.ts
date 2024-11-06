@@ -8,6 +8,8 @@ export class DataServiceService {
   currFood = signal("Biryani");
   currRestaurant = signal("Indian Restaurant 1");
 
+  currUser = signal("Pranav");
+  
   favoriteList = signal<string[]>([]);
 
   constructor() {

@@ -1,1 +1,39 @@
-<p>cart-page works!</p>
+<section class="flex flex-col justify-center items-center min-h-[80vh]">
+        
+    <div class="flex flex-col rounded-md p-10 shadow-spread min-h-[60vh] min-w-[50vw]">
+        <p class="font-bold text-5xl whitespace-nowrap">Cart</p>  
+        @if (cartService.cart().length != 0) {
+            <div class="flex flex-col basis-2/3 my-auto gap-4">
+                <div class="flex justify-between">
+                    <p class="font-bold text-swiggyText">Items</p>
+                    <p class="font-bold text-swiggyTextLight">Price</p>
+                </div>
+
+                @for (item of cartService.cart(); track $index) {
+                    
+                    <app-cart-item [itemNo]="$index" [name]="item.name" [price]="item.price" [quantity]="item.quantity"></app-cart-item>
+                }
+            </div>
+
+            <div class="flex flex-col basis-1/3">
+                <hr class="border-dashed border-swiggyText border-1">
+                
+                <div class="flex justify-between my-5">
+                    <div class="flex flex-col">
+                        <p class="font-bold text-black">Sub Total</p>
+                        <p class="text-swiggyTextLight">Extra charges may apply</p>
+                    </div>
+                    <p class="font-bold">₹{{cartService.getTotal()}}</p>
+                        
+                </div>
+                
+                <button (click)="proceedToPay()" class="p-2 rounded-md bg-green-500">{{paymentButtonText}}</button>
+            </div>
+        }@else {
+            <div class="flex flex-col items-center my-auto gap-5">
+                <p class="text-swiggyTextLight text-4xl whitespace-nowrap">Cart empty</p>  
+                <p class="text-swiggyTextLight">Good food is always cooking! Go ahead, order some yummy items from the menu.</p>
+            </div>
+        }
+    </div>
+</section>

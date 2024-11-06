@@ -1,1 +1,19 @@
-<p>favorites works!</p>
+
+<section class="my-20 mx-64 min-h-[80vh] flex flex-col gap-5 tablet:mx-20 tablet:items-center">
+    <p class="font-bold text-4xl mb-10">Favorite restaurants</p>
+
+    
+
+        @for (item of favoriteaRestaurantData; track $index) {
+            <div class="border-b-2 border-black p-5 border-dashed" >
+                <app-restaurant-card  [restName]="item.restaurantName" [restImg]="item.img" [restItems]="item.foodList.join(', ')" ></app-restaurant-card>
+            </div>
+        }@empty {
+            <p class="text-swiggyTextLight">Add some favorites!</p>
+        }
+
+    
+
+
+</section>
+

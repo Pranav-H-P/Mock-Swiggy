@@ -16,7 +16,7 @@ import { RestaurantCardComponent } from "../reuseable/restaurant-card/restaurant
 })
 export class HomeComponent {
 
-  userName: string = "Pranav";
+  userName: string = "";
   foodData: FoodItemType[];
   restaurantData: RestaurantType[];
 
@@ -24,6 +24,7 @@ export class HomeComponent {
     private restaurantService: RestaurantServiceService, private router: Router){
       this.foodData = menuService.getMenu();
       this.restaurantData = restaurantService.getAllRestaurantData();
+      this.userName = dataService.currUser();
     }
 
 }

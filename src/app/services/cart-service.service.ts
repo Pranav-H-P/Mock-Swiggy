@@ -26,7 +26,15 @@ export class CartServiceService {
   }
 
   removeFromCart(id: number){
+    this.cart.update(values => {
+      return this.cart().filter((_, index) => index !== id)
+    });
+  }
 
+  clear(){
+    
+    this.cart.update(values => {return []});
+  
   }
 
 }

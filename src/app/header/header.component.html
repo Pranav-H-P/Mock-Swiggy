@@ -19,13 +19,13 @@
             <img src="../../assets/images/user.png" alt="user" class="h-auto max-w-6 group-hover:text-orange-500">
             <p class="text-swiggyText group-hover:text-orange-500">{{userName}}</p>
     
-            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl z-50 hidden hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-60 min-h-64 rounded-sm justify-between p-10">
     
                 <p class="text-swiggyText hover:font-bold">Profile</p>
                 <p class="text-swiggyText hover:font-bold">Orders</p>
                 <p class="text-swiggyText hover:font-bold">Swigular One</p>
-                <p class="text-swiggyText hover:font-bold">Favorites</p>
+                <p (click)="goToFavorites()" class="text-swiggyText hover:font-bold">Favorites</p>
                 <p class="text-swiggyText hover:font-bold">Log Out</p>
     
             </div>
@@ -78,7 +78,7 @@
             <img src="../../assets/images/user.png" alt="user" class="h-auto max-w-6 group-hover:text-orange-500">
             <p class="text-swiggyText group-hover:text-orange-500">{{userName}}</p>
     
-            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden z-50 hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-60 min-h-64 rounded-sm justify-between p-10">
     
                 <p class="text-swiggyText hover:font-bold">Profile</p>
@@ -96,7 +96,7 @@
             <p class="absolute text-sm left-3 group-hover:text-orange-500">{{cartService.cart().length}}</p>
             <p class="text-swiggyText group-hover:text-orange-500">Cart</p>
     
-            <div class="absolute top-16 -left-32 laptop:-left-64 extraSmall:min-w-32 transition duration-1000 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            <div class="absolute top-16 -left-32 laptop:-left-64 extraSmall:min-w-32 transition duration-1000 z-50 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-80 min-h-64 rounded-sm justify-between p-10">
     
                 

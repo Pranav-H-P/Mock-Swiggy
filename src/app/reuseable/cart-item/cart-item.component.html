@@ -1,0 +1,7 @@
+<div class="flex justify-between">
+    <p class="text-swiggyText">{{name}} x {{quantity}}</p>
+    <div class="flex">
+        <p class="text-swiggyTextLight">₹{{price*quantity}}</p>
+        <img (click)="onDelete()" class="h-auto max-w-6" src="../../../assets/images/delete.png">
+    </div>
+</div>

@@ -24,6 +24,9 @@ module.exports = {
         desktop: { min: "1250px"}
 
       },
+      boxShadow:{
+        spread: '0 0 20px lightgrey'
+      },
 
       colors: {
         'swiggyText': '#484b4f',
