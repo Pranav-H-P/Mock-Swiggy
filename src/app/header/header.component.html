@@ -24,7 +24,7 @@
     
                 <p class="text-swiggyText hover:font-bold">Profile</p>
                 <p class="text-swiggyText hover:font-bold">Orders</p>
-                <p class="text-swiggyText hover:font-bold">Swiggy One</p>
+                <p class="text-swiggyText hover:font-bold">Swigular One</p>
                 <p class="text-swiggyText hover:font-bold">Favorites</p>
                 <p class="text-swiggyText hover:font-bold">Log Out</p>
     
@@ -45,12 +45,23 @@
     
         <div class="flex items-center gap-2 group py-6 tablet:hidden">
             <img src="../../assets/images/suitcase.png" alt="corp" class="h-auto max-w-6 group-hover:text-orange-500" >
-            <p class="text-swiggyText whitespace-nowrap group-hover:text-orange-500">Swiggy Corporate</p>
+            <p class="text-swiggyText whitespace-nowrap group-hover:text-orange-500">Swigular Corporate</p>
         </div>
     
         <div (click)="goToSearch()" class="flex items-center gap-2 group py-6" id="searchDiv">
-            <img src="../../assets/images/search.png" alt="search" class="h-auto max-w-6 group-hover:text-orange-500">
-            <p class="text-swiggyText group-hover:text-orange-500 extraSmall:hidden">Search</p>
+            
+            @if (this.router.url === "/search"){
+                <img src="../../assets/images/search.png" alt="search" class="h-auto max-w-6 text-orange-500">
+            
+            
+                <p class="text-orange-500 extraSmall:hidden">Search</p>
+            }@else{
+                <img src="../../assets/images/search.png" alt="search" class="h-auto max-w-6 group-hover:text-orange-500">
+            
+            
+                <p class="text-swiggyText group-hover:text-orange-500 extraSmall:hidden">Search</p>
+            }
+            
         </div>
     
         <div class="flex items-center gap-2 group py-6 tablet:hidden">
@@ -72,7 +83,7 @@
     
                 <p class="text-swiggyText hover:font-bold">Profile</p>
                 <p class="text-swiggyText hover:font-bold">Orders</p>
-                <p class="text-swiggyText hover:font-bold">Swiggy One</p>
+                <p class="text-swiggyText hover:font-bold">Swigular One</p>
                 <p (click)="goToFavorites()" class="text-swiggyText hover:font-bold">Favorites</p>
                 <p class="text-swiggyText hover:font-bold">Log Out</p>
     

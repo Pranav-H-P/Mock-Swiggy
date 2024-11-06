@@ -200,5 +200,11 @@ export class RestaurantServiceService {
 
     return undefined;
   }
-
+  getMatchingItems(name: string){ // for search
+    
+    name=name.toLowerCase().trimStart().trimEnd()
+    
+    return this.restaurantList.filter(item => item.restaurantName.toLowerCase().startsWith(name));
+    
+  }
 }

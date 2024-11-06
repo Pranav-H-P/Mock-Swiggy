@@ -112,7 +112,11 @@ export class MenuServiceService {
     return undefined;
   }
 
-  getMatchingItems(){ // for search
-
+  getMatchingItems(name: string){ // for search
+    
+    name=name.toLowerCase().trimStart().trimEnd()
+    
+    return this.foodItemList.filter(item => item.name.toLowerCase().startsWith(name));
+    
   }
 }
