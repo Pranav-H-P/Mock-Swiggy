@@ -26,6 +26,7 @@ export class HeaderComponent {
   }
 
   getAddress(){
+    
     return this.dataService.currAddress()
   }
 

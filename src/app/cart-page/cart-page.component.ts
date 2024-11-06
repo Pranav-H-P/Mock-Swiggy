@@ -28,6 +28,7 @@ export class CartPageComponent {
 
     if (this.dataService.currUser() === ""){
       this.router.navigate(["profile"]);
+      return;
     }
 
     this.paymentButtonText = "PROCESSING PAYMENT..."

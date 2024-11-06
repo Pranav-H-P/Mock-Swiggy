@@ -26,7 +26,7 @@ export class DataServiceService {
     if (storedUserString) {
         
       this.currUser.update(() => JSON.parse(storedUserString).username);
-      this.currAddress.update(() => JSON.parse(storedUserString).password);
+      this.currAddress.update(() => JSON.parse(storedUserString).address);
 
     }
     this.favoriteList.update(values => {return tempArr});
