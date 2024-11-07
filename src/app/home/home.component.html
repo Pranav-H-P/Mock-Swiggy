@@ -1,5 +1,5 @@
 
-<section class="px-44 my-5 laptop:px-20">
+<section class="px-44 my-5 laptop:px-20 overflow-hidden">
 
     @if (userName != "") {
         <p class="font-bold text-2xl">{{userName}}, What's on your mind?</p>
@@ -9,7 +9,7 @@
 
     
 
-    <div class="flex p-5 gap-5 overflow-scroll tablet:flex-wrap tablet:p-0">
+    <div class="flex p-5 gap-5 overflow-x-scroll overflow-y-hidden tablet:flex-wrap tablet:p-0">
         
         @for (item of foodData; track i; let i = $index) {
 
@@ -20,7 +20,7 @@
 
 </section>
 
-<section class="flex flex-col px-44 my-5 mobile:px-5 laptop:px-20 overflow-scroll ">
+<section class="flex flex-col px-44 my-5 mobile:px-5 laptop:px-20 overflow-hidden ">
 
 
     <p class="font-bold text-2xl">Top restaurants in your area</p>
