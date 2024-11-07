@@ -15,18 +15,18 @@
             <p class="text-swiggyText group-hover:text-orange-500">Help</p>
         </div>
     
-        <div class="flex items-center gap-2 relative group h-auto py-6">
+        <div (click)="goToProfile($event)" class="flex items-center gap-2 relative group h-auto py-6">
             <img src="../../assets/images/user.png" alt="user" class="h-auto max-w-6 group-hover:text-orange-500">
-            <p class="text-swiggyText group-hover:text-orange-500">{{userName}}</p>
+            <p class="text-swiggyText group-hover:text-orange-500">{{getUserName()}}</p>
     
-            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl z-50 hidden hover:flex group-hover:flex border border-t-4 
+            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl z-20 hidden hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-60 min-h-64 rounded-sm justify-between p-10">
     
-                <p class="text-swiggyText hover:font-bold">Profile</p>
+                <p (click)="goToProfile($event)" class="text-swiggyText hover:font-bold">Profile</p>
                 <p class="text-swiggyText hover:font-bold">Orders</p>
                 <p class="text-swiggyText hover:font-bold">Swigular One</p>
-                <p (click)="goToFavorites()" class="text-swiggyText hover:font-bold">Favorites</p>
-                <p class="text-swiggyText hover:font-bold">Log Out</p>
+                <p (click)="goToFavorites($event)" class="text-swiggyText hover:font-bold">Favorites</p>
+                <p (click)="logOut($event)" class="text-swiggyText hover:font-bold">Log Out</p>
     
             </div>
     
@@ -37,11 +37,15 @@
     }@else {
 
 
+        @if (getAddress() != "") {
 
-        <div class="flex items-center gap-2 group py-6 extraSmall:hidden">
-            <p class="text-sm font-bold text-black underline underline-offset-8 group-hover:text-orange-500">Home</p> 
-            <p class="text-swiggyTextLight text-xs largeTablet:max-w-[8vw] truncate group-hover:opacity-60">123 street, xyz Nagar, Chennai, Tamil Nadu</p>
-        </div>
+            <div class="flex items-center gap-2 group py-6 extraSmall:hidden">
+                <p class="text-sm font-bold text-black underline underline-offset-8 group-hover:text-orange-500">Home</p> 
+                <p class="text-swiggyTextLight text-xs largeTablet:max-w-[8vw] truncate group-hover:opacity-60">{{getAddress()}}</p>
+            </div>
+
+        }
+            
     
         <div class="flex items-center gap-2 group py-6 tablet:hidden">
             <img src="../../assets/images/suitcase.png" alt="corp" class="h-auto max-w-6 group-hover:text-orange-500" >
@@ -74,18 +78,18 @@
             <p class="text-swiggyText group-hover:text-orange-500">Help</p>
         </div>
     
-        <div class="flex items-center gap-2 relative group h-auto py-6 ">
+        <div (click)="goToProfile($event)" class="flex items-center gap-2 relative group h-auto py-6 ">
             <img src="../../assets/images/user.png" alt="user" class="h-auto max-w-6 group-hover:text-orange-500">
-            <p class="text-swiggyText group-hover:text-orange-500">{{userName}}</p>
+            <p class="text-swiggyText group-hover:text-orange-500">{{getUserName()}}</p>
     
-            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden z-50 hover:flex group-hover:flex border border-t-4 
+            <div class="absolute top-16 -left-16 transition duration-1000 bg-white shadow-2xl hidden z-20 hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-60 min-h-64 rounded-sm justify-between p-10">
     
-                <p class="text-swiggyText hover:font-bold">Profile</p>
+                <p (click)="goToProfile($event)" class="text-swiggyText hover:font-bold">Profile</p>
                 <p class="text-swiggyText hover:font-bold">Orders</p>
                 <p class="text-swiggyText hover:font-bold">Swigular One</p>
-                <p (click)="goToFavorites()" class="text-swiggyText hover:font-bold">Favorites</p>
-                <p class="text-swiggyText hover:font-bold">Log Out</p>
+                <p (click)="goToFavorites($event)" class="text-swiggyText hover:font-bold">Favorites</p>
+                <p (click)="logOut($event)" class="text-swiggyText hover:font-bold">Log Out</p>
     
             </div>
     
@@ -96,7 +100,7 @@
             <p class="absolute text-sm left-3 group-hover:text-orange-500">{{cartService.cart().length}}</p>
             <p class="text-swiggyText group-hover:text-orange-500">Cart</p>
     
-            <div class="absolute top-16 -left-32 laptop:-left-64 extraSmall:min-w-32 transition duration-1000 z-50 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
+            <div class="absolute top-16 -left-32 laptop:-left-64 extraSmall:min-w-32 transition duration-1000 z-20 bg-white shadow-2xl hidden hover:flex group-hover:flex border border-t-4 
             border-t-orange-500 flex-col min-w-80 min-h-64 rounded-sm justify-between p-10">
     
                 

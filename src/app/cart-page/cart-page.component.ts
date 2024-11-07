@@ -4,6 +4,7 @@ import { CartItemComponent } from '../reuseable/cart-item/cart-item.component';
 import { Router } from '@angular/router';
 import { HttpserviceService } from '../services/httpservice.service';
 import { CartItemType } from '../item-types';
+import { DataServiceService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -16,10 +17,18 @@ export class CartPageComponent {
 
   paymentButtonText: string = "PROCEED TO PAY";
 
+  userAddress: string = "";
+
   constructor(protected cartService: CartServiceService, private router: Router,
-    private httpService: HttpserviceService){}
+    private httpService: HttpserviceService, private dataService: DataServiceService){
+      this.userAddress = dataService.currAddress();
+    }
 
   proceedToPay(){
+
+    if (this.dataService.currUser() === ""){
+      this.router.navigate(["profile"]);
+    }
 
     this.paymentButtonText = "PROCESSING PAYMENT..."
 
@@ -37,7 +46,7 @@ export class CartPageComponent {
         this.router.navigate(["failure"]);
 
       }
-  });
+    });
 
   }
 

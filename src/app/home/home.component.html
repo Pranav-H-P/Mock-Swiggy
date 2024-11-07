@@ -1,8 +1,13 @@
 
 <section class="px-44 my-5 laptop:px-20">
 
+    @if (userName != "") {
+        <p class="font-bold text-2xl">{{userName}}, What's on your mind?</p>
+    }@else{
+        <p class="font-bold text-2xl">What's on your mind?</p>
+    }
 
-    <p class="font-bold text-2xl">{{userName}}, What's on your mind?</p>
+    
 
     <div class="flex p-5 gap-5 overflow-scroll tablet:flex-wrap tablet:p-0">
         

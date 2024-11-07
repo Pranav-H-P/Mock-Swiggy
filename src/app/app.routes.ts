@@ -8,6 +8,7 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PaymentFailureComponent } from './payment-failure/payment-failure.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 export const routes: Routes = [
     {
@@ -41,9 +42,13 @@ export const routes: Routes = [
     {
         path: "paymentFailed",
         component: PaymentFailureComponent
+    },{
+        path: "profile",
+        component: LoginPageComponent
     },
     {
         path: "**",
         component: PageNotFoundComponent
     }
+    
 ];

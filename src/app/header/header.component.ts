@@ -13,13 +13,24 @@ import { DataServiceService } from '../services/data-service.service';
 })
 export class HeaderComponent {
 
-  userName: string = "";
+  constructor(protected router: Router, protected cartService: CartServiceService,
+    private dataService: DataServiceService){}
 
-  constructor(protected router: Router, protected cartService: CartServiceService, private dataService: DataServiceService){
-    this.userName = dataService.currUser();
+  goToProfile(event: MouseEvent){
+    event.stopPropagation();
+    this.router.navigate(['profile']);
   }
 
-  goToFavorites(){
+  getUserName(){
+    return this.dataService.currUser()
+  }
+
+  getAddress(){
+    return this.dataService.currAddress()
+  }
+
+  goToFavorites(event: MouseEvent){
+    event.stopPropagation();
     this.router.navigate(["favorites"]);
   }
 
@@ -33,6 +44,12 @@ export class HeaderComponent {
 
   goToHome(){
     this.router.navigate([""]);
+  }
+
+  logOut(event: MouseEvent){
+    event.stopPropagation();
+    this.dataService.clearUser();
+    this.goToHome();
   }
 
 }

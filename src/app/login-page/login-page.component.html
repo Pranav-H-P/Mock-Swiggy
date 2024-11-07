@@ -1,0 +1,24 @@
+<section class="px-44 my-5 laptop:px-20 flex flex-col justify-center items-center gap-10 min-h-[80vh]">
+
+    @if (currUser === "") {
+        
+        <div class="z-40 p-5 min-h-[30vh] min-w-[50vw] flex flex-col justify-between bg-white rounded-lg">
+            
+            <p class="z-40 text-4xl font-bold">Log In</p>
+            <input placeholder="Enter your username" [(ngModel)]="typedUserName" type="text" [class]="usernameCSS">
+            <input type="password" placeholder="Enter your password" [(ngModel)]="typedPassword" [class]="passwordCSS">
+            <input placeholder="Enter your delivery address" [(ngModel)]="typedAddress" type="text" [class]="addressCSS">
+            <button (click)="login()" class="p-3 text-xl rounded-md bg-orange-500 z-40">{{loginText}}</button>
+
+        </div>
+        
+
+    }@else {
+        <div class="p-5 min-h-[60vh] min-w-[50vw] flex flex-col gap-20">
+            <p class="text-4xl font-bold  border-b-2 border-b-green-400 border-dashed">Welcome {{currUser}}</p>
+            <button (click)="goToFavorites()" class="text-swiggyText p-3 text-xl rounded-md bg-slate-100">Feeling hungry? Go through your favorites!</button>
+            <button (click)="logOut()" class="mx-auto max-w-60 p-3 text-xl rounded-md bg-red-500">Log Out</button>
+        </div>
+    }
+
+</section>
