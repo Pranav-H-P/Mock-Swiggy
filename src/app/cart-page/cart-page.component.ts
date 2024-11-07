@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CartServiceService } from '../services/cart-service.service';
 import { CartItemComponent } from '../reuseable/cart-item/cart-item.component';
 import { Router } from '@angular/router';
-import { HttpserviceService } from '../services/httpservice.service';
+import { HttpserviceService } from '../services/http-service.service';
 import { CartItemType } from '../item-types';
 import { DataServiceService } from '../services/data-service.service';
 

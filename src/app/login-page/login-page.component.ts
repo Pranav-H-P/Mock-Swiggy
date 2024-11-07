@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataServiceService } from '../services/data-service.service';
-import { HttpserviceService } from '../services/httpservice.service';
+import { HttpserviceService } from '../services/http-service.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
